@@ -8,7 +8,7 @@ using PowerArgs;
 namespace BAG.UnityPackage.Cmd
 {
     [TabCompletion]
-    [ArgExample("xup [-i] test.unitypackage [-o] test", "extracts test.unitypackage to the folder 'test'")]
+    [ArgExample("upackx [-i] packageFile.unitypackage [-o] directoryName", "extracts packageFile.unitypackage to the folder 'directoryName'")]
     public class Options
     {
         [ArgPosition(0), ArgRequired(PromptIfMissing = true), ArgExistingFile(), ArgShortcut("i")]
@@ -18,6 +18,10 @@ namespace BAG.UnityPackage.Cmd
         [ArgPosition(1), ArgShortcut("o")]
         [ArgDescription("Output path, defaults to the current path and name of the input file")]
         public string Out { get; set; }
+
+        [ArgShortcut("f")]
+        [ArgDescription("force, true to overwrite existing files")]
+        public bool Force { get; set; }
 
         [ArgShortcut("d")]
         [ArgDescription("debug, true to launch debugger")]

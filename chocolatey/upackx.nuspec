@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>upackx</id>
+    <title>upackx</title>
+    <version>0.0.0.1</version>
+    <authors>Brad Gearon</authors>
+    <owners>Brad Gearon</owners>
+    <summary>unity-3d-package-extract : tool to unpack unitypackages</summary>
+    <description>unity-3d-package-extract cmd line: upackx name.unitypackage destination</description>
+    <projectUrl>https://github.com/bradgearon/unity-3d-package-extract</projectUrl>
+    <tags>upackx unity3d unitypackage unity-3d-package-extract admin</tags>
+    <copyright></copyright>
+    <licenseUrl>https://github.com/bradgearon/unity-3d-package-extract/raw/master/lic.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<iconUrl>https://github.com/bradgearon/unity-3d-package-extract/raw/master/resources/icon.gif</iconUrl>-->
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes>initial version</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
