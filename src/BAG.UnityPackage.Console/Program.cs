@@ -94,7 +94,7 @@ namespace BAG.UnityPackage.Cmd
                                 Dictionary<string, string> toExtract = null;
 
                                 var pathEntries = from entry in tempArchive.Entries.ToArray()
-                                                  where Path.GetFileName(entry.FilePath).Contains("pathname")
+                                                  where Path.GetFileName(entry.FilePath).Equals("pathname")
                                                     && !entry.IsDirectory
                                                   select entry;
 
@@ -103,7 +103,7 @@ namespace BAG.UnityPackage.Cmd
                                     pathEntry => getFirstLine(pathEntry));
 
                                 var assets = from entry in tempArchive.Entries.ToArray()
-                                             where Path.GetFileName(entry.FilePath).Contains("asset")
+                                             where Path.GetFileName(entry.FilePath).Equals("asset")
                                                 && !entry.IsDirectory
                                              select new
                                              {
@@ -145,6 +145,7 @@ namespace BAG.UnityPackage.Cmd
                                         errors++;
                                         Console.ForegroundColor = ConsoleColor.Red;
                                         Console.WriteLine(Environment.NewLine + "error occurred while extracting: " + ex.Message + Environment.NewLine);
+                                        Console.ResetColor();
                                     }
                                 }
                             }
